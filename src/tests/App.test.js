@@ -5,7 +5,7 @@ import React from 'react';
 import App from '../App';
 import renderWithRouter from '../renderWithRouter';
 
-describe('Teste se o topo da aplicação contém um conjunto fixo de links de navegação', () => {
+describe('Teste o componente <App.js />', () => {
   test('Teste se a aplicação é redirecionada para a página inicial,', () => {
     const { history } = renderWithRouter(<App />);
     const screenHome = screen.getByRole('link', { name: 'Home' });

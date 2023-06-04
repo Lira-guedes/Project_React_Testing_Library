@@ -3,7 +3,7 @@ import React from 'react';
 import About from '../pages/About';
 import renderWithRouter from '../renderWithRouter';
 
-describe('', () => {
+describe('Teste o componente <About.js />.', () => {
   test('Teste se a página contém as informações sobre a Pokédex', () => {
     renderWithRouter(<About />);
     expect(screen.getByText(/details for each one/i)).toBeInTheDocument();

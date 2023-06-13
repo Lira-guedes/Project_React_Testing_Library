@@ -11,7 +11,8 @@ describe('Teste o componente <Pokemon.js />', () => {
     expect(screen.getByText('Pikachu')).toBeInTheDocument();
     expect(screen.getByText('Average weight: 6.0 kg')).toBeInTheDocument();
     expect(screen.getByText('Electric')).toBeInTheDocument();
-    expect(screen.getByAltText(/pikachu sprite/i)).toBeInTheDocument();
+    expect(screen.getByRole('img', { name: /pikachu sprite/i }).src).toBe('https://archives.bulbagarden.net/media/upload/b/b2/Spr_5b_025_m.png');
+    // expect(screen.getByRole('img')).toBeInTheDocument();
   });
   test('Teste se o card do Pokémon contém um link para exibir detalhes deste Pokémon.', () => {
     renderWithRouter(<Pokemon pokemon={ pokemonList[0] } showDetailsLink isFavorite />);
@@ -34,6 +35,6 @@ describe('Teste o componente <Pokemon.js />', () => {
     renderWithRouter(<Pokemon pokemon={ pokemonList[0] } showDetailsLink isFavorite />);
     // userEvent.click(screen.getByRole('checkbox'));
     expect(screen.getByAltText(/is marked as favorite/i)).toBeInTheDocument();
-    // expect(screen.getAllByRole('img', { name: /is marked as favorite/i }).src).toContain('/star-icon.svg');
+    expect(screen.getByRole('img', { name: /is marked as favorite/i }).src).toContain('/star-icon.svg');
   });
 });

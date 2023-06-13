@@ -11,7 +11,6 @@ describe('Teste o componente <Pokemon.js />', () => {
     expect(screen.getByText('Pikachu')).toBeInTheDocument();
     expect(screen.getByText('Average weight: 6.0 kg')).toBeInTheDocument();
     expect(screen.getByText('Electric')).toBeInTheDocument();
-    // expect(screen.getAllByRole('img', { name: /pikachu sprite/i }).src).toBe('https://archives.bulbagarden.net/media/upload/b/b2/Spr_5b_025_m.png');
     expect(screen.getByAltText(/pikachu sprite/i)).toBeInTheDocument();
   });
   test('Teste se o card do Pokémon contém um link para exibir detalhes deste Pokémon.', () => {
